@@ -1,12 +1,11 @@
+using System;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeFixes;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using TestHelper;
-using SitecoreCodeAnalyzer;
+using RR.CodeAnalyzer.Test.Helpers;
 
-namespace SitecoreCodeAnalyzer.Test
+namespace RR.CodeAnalyzer.Test
 {
     [TestClass]
     public class UnitTest : CodeFixVerifier
@@ -71,12 +70,12 @@ namespace SitecoreCodeAnalyzer.Test
 
         protected override CodeFixProvider GetCSharpCodeFixProvider()
         {
-            return new SitecoreCodeAnalyzerCodeFixProvider();
+            return new SitecoreAnalyzerCodeFixProvider();
         }
 
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
-            return new SitecoreCodeAnalyzerAnalyzer();
+            return new SitecoreAnalyzer();
         }
     }
 }

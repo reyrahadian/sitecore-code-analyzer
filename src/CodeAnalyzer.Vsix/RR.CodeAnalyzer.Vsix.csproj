@@ -73,9 +73,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SitecoreCodeAnalyzer\SitecoreCodeAnalyzer.csproj">
-      <Project>{FB858A07-0408-4D42-94F6-71C28713CF9D}</Project>
-      <Name>SitecoreCodeAnalyzer</Name>
+    <ProjectReference Include="..\CodeAnalyzer\RR.CodeAnalyzer.csproj">
+      <Project>{6e6ba85e-1ade-4f64-8be2-43771e55b46e}</Project>
+      <Name>RR.CodeAnalyzer</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

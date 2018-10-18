@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SitecoreCodeAnalyzer\SitecoreCodeAnalyzer.csproj" />
+    <ProjectReference Include="..\CodeAnalyzer\RR.CodeAnalyzer.csproj" />
   </ItemGroup>
 
 </Project>
