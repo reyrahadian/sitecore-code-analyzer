@@ -129,4 +129,16 @@
     <value>Type name contains lowercase letters</value>
     <comment>The title of the diagnostic.</comment>
   </data>
+  <data name="HelixArchitecture_ProjectLayerAnalyzer_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HelixArchitecture_ProjectLayerAnalyzer_HelpLinkUri" xml:space="preserve">
+    <value>https://helix.sitecore.net/principles/architecture-principles/layers.html</value>
+  </data>
+  <data name="HelixArchitecture_ProjectLayerAnalyzer_MessageFormat" xml:space="preserve">
+    <value>Project layer cannot depend on {0} layer</value>
+  </data>
+  <data name="HelixArchitecture_ProjectLayerAnalyzer_Title" xml:space="preserve">
+    <value>Project layer dependency direction should be followed</value>
+  </data>
 </root>
