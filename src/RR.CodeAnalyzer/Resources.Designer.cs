@@ -89,20 +89,47 @@ namespace RR.CodeAnalyzer {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://helix.sitecore.net/principles/architecture-principles/layers.html.
+        /// </summary>
+        public static string HelixArchitecture_DependencyDirection_HelpLinkUri {
+            get {
+                return ResourceManager.GetString("HelixArchitecture_DependencyDirection_HelpLinkUri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string HelixArchitecture_FeatureLayerAnalyzer_Description {
+            get {
+                return ResourceManager.GetString("HelixArchitecture_FeatureLayerAnalyzer_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feature layer cannot depend on {0} layer.
+        /// </summary>
+        public static string HelixArchitecture_FeatureLayerAnalyzer_MessageFormat {
+            get {
+                return ResourceManager.GetString("HelixArchitecture_FeatureLayerAnalyzer_MessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Feature layer dependency direction should be followed.
+        /// </summary>
+        public static string HelixArchitecture_FeatureLayerAnalyzer_Title {
+            get {
+                return ResourceManager.GetString("HelixArchitecture_FeatureLayerAnalyzer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string HelixArchitecture_ProjectLayerAnalyzer_Description {
             get {
                 return ResourceManager.GetString("HelixArchitecture_ProjectLayerAnalyzer_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to https://helix.sitecore.net/principles/architecture-principles/layers.html.
-        /// </summary>
-        public static string HelixArchitecture_ProjectLayerAnalyzer_HelpLinkUri {
-            get {
-                return ResourceManager.GetString("HelixArchitecture_ProjectLayerAnalyzer_HelpLinkUri", resourceCulture);
             }
         }
         

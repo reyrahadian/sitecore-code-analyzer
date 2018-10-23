@@ -8,16 +8,16 @@ using Microsoft.CodeAnalysis.Diagnostics;
 namespace RR.CodeAnalyzer.Analyzers.HelixArchitecture
 {
 	[DiagnosticAnalyzer(LanguageNames.CSharp)]
-	public class ProjectLayerAnalyzer : DiagnosticAnalyzer
+	public class FeatureLayerAnalyzer : DiagnosticAnalyzer
 	{
 		private static readonly DiagnosticDescriptor Rule = new DiagnosticDescriptor(
-			DiagnosticIds.HelixArchitecture.ProjectLayerAnalyzer,
-			Resources.HelixArchitecture_ProjectLayerAnalyzer_Title,
-			Resources.HelixArchitecture_ProjectLayerAnalyzer_MessageFormat,
+			DiagnosticIds.HelixArchitecture.FeatureLayerAnalyzer,
+			Resources.HelixArchitecture_FeatureLayerAnalyzer_Title,
+			Resources.HelixArchitecture_FeatureLayerAnalyzer_MessageFormat,
 			CodeAnalyzerCategory.Design,
 			DiagnosticSeverity.Warning,
 			true,
-			Resources.HelixArchitecture_ProjectLayerAnalyzer_Description,
+			Resources.HelixArchitecture_FeatureLayerAnalyzer_Description,
 			Resources.HelixArchitecture_DependencyDirection_HelpLinkUri);
 
 		public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics
@@ -42,10 +42,12 @@ namespace RR.CodeAnalyzer.Analyzers.HelixArchitecture
 			if (childNode == null) return;
 
 			var currentClassNamespace = childNode.Name.ToString().ToLower();
-			if (currentClassNamespace.StartsWith("project."))
+			if (currentClassNamespace.StartsWith("feature."))
 			{
 				if (referencedNamespace.StartsWith("project."))
-					ReportDiagnostic(context, usingDirectiveSyntax, "Project");				
+					ReportDiagnostic(context, usingDirectiveSyntax, "Project");
+				else if (referencedNamespace.StartsWith("feature."))
+					ReportDiagnostic(context, usingDirectiveSyntax, "Feature");
 			}
 		}
 

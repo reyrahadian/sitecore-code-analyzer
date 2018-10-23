@@ -5,6 +5,7 @@
 		public class HelixArchitecture
 		{
 			public const string ProjectLayerAnalyzer = "HelixArchitecture001";
+			public const string FeatureLayerAnalyzer = "HelixArchitecture002";
 		}
 	}
 }

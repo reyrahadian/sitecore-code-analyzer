@@ -7,7 +7,7 @@ using TestHelper;
 namespace RR.CodeAnalyzer.Test.Analyzers.HelixArchitecture
 {
 	[TestClass]
-	public class ProjectLayerAnalyzerTests : DiagnosticVerifier
+	public class FeatureLayerAnalyzerTests : DiagnosticVerifier
 	{
 
 		//No diagnostics expected to show up
@@ -20,13 +20,13 @@ namespace RR.CodeAnalyzer.Test.Analyzers.HelixArchitecture
 		}
 
 		[TestMethod]
-		public void ProjectLayer_CannotDependOn_ProjectLayer()
+		public void FeatureLayer_CannotDependOn_ProjectLayer()
 		{
 			var test = @"
     using Sitecore.Kernel;
-    using Project.Habitat;
+    using Project.Demo;
 
-    namespace Project.Demo
+    namespace Feature.Account
     {
         class TypeName
         {   
@@ -34,8 +34,8 @@ namespace RR.CodeAnalyzer.Test.Analyzers.HelixArchitecture
     }";
 			var expected = new DiagnosticResult
 			{
-				Id = DiagnosticIds.HelixArchitecture.ProjectLayerAnalyzer,
-				Message = string.Format(Resources.HelixArchitecture_ProjectLayerAnalyzer_MessageFormat, "Project"),
+				Id = DiagnosticIds.HelixArchitecture.FeatureLayerAnalyzer,
+				Message = string.Format(Resources.HelixArchitecture_FeatureLayerAnalyzer_MessageFormat, "Project"),
 				Severity = DiagnosticSeverity.Warning,
 				Locations =
 					new[] {
@@ -47,30 +47,40 @@ namespace RR.CodeAnalyzer.Test.Analyzers.HelixArchitecture
 		}
 
 		[TestMethod]
-		public void ProjectLayer_CanDependOn_FeatureLayer()
+		public void FeatureLayer_CannotDependOn_FeatureLayer()
 		{
 			var test = @"
     using Sitecore.Kernel;
-    using Feature.Account;
+    using Feature.Banner;
 
-    namespace Project.Demo
+    namespace Feature.Account
     {
         class TypeName
         {   
         }
     }";
+			var expected = new DiagnosticResult
+			{
+				Id = DiagnosticIds.HelixArchitecture.FeatureLayerAnalyzer,
+				Message = string.Format(Resources.HelixArchitecture_FeatureLayerAnalyzer_MessageFormat, "Feature"),
+				Severity = DiagnosticSeverity.Warning,
+				Locations =
+					new[] {
+						new DiagnosticResultLocation("Test0.cs", 3, 5)
+					}
+			};
 
-			VerifyCSharpDiagnostic(test);
+			VerifyCSharpDiagnostic(test, expected);
 		}
 
 		[TestMethod]
-		public void ProjectLayer_CanDependOn_FoundationLayer()
+		public void FeatureLayer_CanDependOn_FoundationLayer()
 		{
 			var test = @"
     using Sitecore.Kernel;
-    using Foundation.SitecoreExtensions;
+    using Foundation.Serialization;
 
-    namespace Project.Demo
+    namespace Feature.Account
     {
         class TypeName
         {   
@@ -78,11 +88,11 @@ namespace RR.CodeAnalyzer.Test.Analyzers.HelixArchitecture
     }";
 
 			VerifyCSharpDiagnostic(test);
-		}
+		}		
 
 		protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
 		{
-			return new ProjectLayerAnalyzer();
+			return new FeatureLayerAnalyzer();
 		}
 	}
 }
