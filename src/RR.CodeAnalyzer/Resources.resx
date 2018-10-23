@@ -141,6 +141,15 @@
   <data name="HelixArchitecture_FeatureLayerAnalyzer_Title" xml:space="preserve">
     <value>Feature layer dependency direction should be followed</value>
   </data>
+  <data name="HelixArchitecture_FoundationLayerAnalyzer_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="HelixArchitecture_FoundationLayerAnalyzer_MessageFormat" xml:space="preserve">
+    <value>Foundation layer cannot depend on {0} layer</value>
+  </data>
+  <data name="HelixArchitecture_FoundationLayerAnalyzer_Title" xml:space="preserve">
+    <value>Foundation layer dependency direction should be followed</value>
+  </data>
   <data name="HelixArchitecture_ProjectLayerAnalyzer_Description" xml:space="preserve">
     <value />
   </data>

@@ -127,6 +127,33 @@ namespace RR.CodeAnalyzer {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string HelixArchitecture_FoundationLayerAnalyzer_Description {
+            get {
+                return ResourceManager.GetString("HelixArchitecture_FoundationLayerAnalyzer_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation layer cannot depend on {0} layer.
+        /// </summary>
+        public static string HelixArchitecture_FoundationLayerAnalyzer_MessageFormat {
+            get {
+                return ResourceManager.GetString("HelixArchitecture_FoundationLayerAnalyzer_MessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Foundation layer dependency direction should be followed.
+        /// </summary>
+        public static string HelixArchitecture_FoundationLayerAnalyzer_Title {
+            get {
+                return ResourceManager.GetString("HelixArchitecture_FoundationLayerAnalyzer_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string HelixArchitecture_ProjectLayerAnalyzer_Description {
             get {
                 return ResourceManager.GetString("HelixArchitecture_ProjectLayerAnalyzer_Description", resourceCulture);
