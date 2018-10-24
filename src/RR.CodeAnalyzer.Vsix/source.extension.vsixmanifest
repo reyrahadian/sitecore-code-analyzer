@@ -5,7 +5,6 @@
         <DisplayName>RR.CodeAnalyzer</DisplayName>
         <Description xml:space="preserve">A collection of Sitecore code analyzers</Description>
         <MoreInfo>https://github.com/reyrahadian/sitecore-code-analyzer</MoreInfo>
-        <License>https://github.com/reyrahadian/sitecore-code-analyzer</License>
         <GettingStartedGuide>https://github.com/reyrahadian/sitecore-code-analyzer</GettingStartedGuide>
     </Metadata>
     <Installation>
